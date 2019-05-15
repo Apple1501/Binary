@@ -133,10 +133,9 @@ Complex Complex::operator+( float B)
 	return Complex(re + B,im);
 }
 void Complex::WriteInFile()//запись в двоичный файла комплексного числа
-{
-	Complex C(this->Re(), this->Im());
+{	
 	ofstream f_bin("binIn.txt", ios::binary);
-	f_bin.write((char*)&C, sizeof(Complex));
+	f_bin.write((char*)this, sizeof(Complex));
 	f_bin.close();
 }
 Complex Complex::ReadFromFile()//считывание из двоичного файла комплексного числа
